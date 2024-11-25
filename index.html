@@ -9,38 +9,75 @@
       font-family: Arial, sans-serif;
       margin: 20px;
       padding: 20px;
-      max-width: 600px;
+      max-width: 700px;
+      background-color: black; /* Set background to black */
+      color: white; /* Set text color to white */
     }
     button {
       padding: 10px 20px;
-      margin: 10px 10px 20px 0;
-      background-color: #007BFF;
-      color: white;
+      margin: 10px 5px;
+      background-color: red; /* Set button background to red */
+      color: white; /* Set button text color to white */
       border: none;
       cursor: pointer;
       border-radius: 5px;
     }
     button:hover {
-      background-color: #0056b3;
+      background-color: #cc0000; /* Darker red on hover */
     }
     .output {
       margin: 15px 0;
       padding: 10px;
-      border: 1px solid #ddd;
+      border: 1px solid #444; /* Slightly lighter border */
       border-radius: 5px;
-      background-color: #f9f9f9;
+      background-color: #222; /* Dark grey for the review box */
+      color: white; /* Ensure text stays white */
     }
     a {
       text-decoration: none;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      background-color: red; /* Set button background to red */
+      color: white; /* Set link text color to white */
+      border-radius: 5px;
+      display: inline-block;
+    }
+    a:hover {
+      background-color: #cc0000; /* Darker red on hover */
     }
   </style>
 </head>
 <body>
 
   <h1>Chris Ha</h1>
-  <p>Click the button below to generate a review. You can also leave a review directly on Google or Yelp using the buttons provided!</p>
+  <p>Click the button below to generate a review. Use the links to leave a review on Google or Yelp!</p>
 
   <button onclick="generateReview()">Generate a Review</button>
   <div id="reviewOutput" class="output"></div>
 
-  <button onclick="window.open('https://gorate.biz/leavechrisareview
+  <a href="https://gorate.biz/leavechrisareview/" target="_blank">Leave a Google Review</a>
+  <a href="https://www.yelp.com/writeareview/biz/WdshnXVjeZq-MvVofMzuTA?review_origin=mobile-site-biz-details-review-feed-war-widget" target="_blank">Leave a Yelp Review</a>
+
+  <script>
+    function generateReview() {
+      const reviews = [
+        "Chubby Cattle is so unique because of their bold willingness to innovate(some). The arcade machines(some) made me feel nostalgic with their collection of classic video games. Our server Chris went over the menu and the layout of the restaurant(main). He explained that this is their flagship location and offers features like the arcade, sterilized eggs, and self-serve drinks near Chubby Tea(main). Chris asked if we had allergies or were celebrating anything(main). He cooked all the meats perfectly and paired them with the best sauces(main). The 90-minute dining limit felt just right(some), and the ice cream flavors like Taro and Matcha(some) were a perfect way to end the meal. Chris truly provided top-tier service(main). Be sure to ask for Chris if you visit for an unforgettable experience(some)!",
+
+        "This restaurant stands out for its creativity and innovation(some). The arcade games(some) were a fun way to pass time while waiting. Chris, our server, explained the menu thoroughly and highlighted special features like the sterilized eggs, arcade, and self-serve drinks at Chubby Tea(main). He also asked about allergies and special occasions(main). Chris cooked each cut of meat exactly to perfection and recommended excellent sauces(main). The dining time of 90 minutes seemed short at first, but it was plenty for the rich and flavorful meats(some). Their soft-serve ice cream flavors(some), like Sea Salt and Vanilla, are absolutely worth trying! The clean restrooms were also impressive(some). Chris’s service was beyond amazing(main)—don’t miss out on asking for him when you visit(some)!",
+
+        "Chubby Cattle is one of a kind because of their innovative touches(some). The arcade games(some) kept me entertained and brought back memories. Chris, our server, walked us through the menu and described the standout features(main), like the arcade, the sterilized eggs, and the Chubby Tea drink station(main). He also asked about any dietary restrictions or celebrations(main). Chris cooked all of our meats with care and recommended sauces that matched perfectly(main). The 90-minute time limit(some) worked well, and I made room for their delicious ice creams(some) despite being full. The clean and well-maintained restrooms left a great impression(some). Chris’s excellent service(main) made the experience unforgettable(some).",
+        
+        "Chubby Cattle offers such a different experience(some). The arcade machines(some) were so much fun and reminded me of my childhood. Chris was our server, and he went over the menu and explained the restaurant's unique features(main), like the self-serve drink station, sterilized eggs, and arcade(main). He also asked us if we had any allergies or if it was a special occasion(main). Chris cooked the meats to perfection and paired each one with the best sauces(main). Though the dining limit was 90 minutes, it felt perfect(some). Their ice cream options(some), especially Taro and Matcha, were delicious. Clean restrooms(some) also showed how much they care about their customers. Chris’s amazing service(main) tied everything together(some)!"
+      ];
+
+      // Pick a random review
+      const randomReview = reviews[Math.floor(Math.random() * reviews.length)];
+
+      // Display the review
+      const outputDiv = document.getElementById("reviewOutput");
+      outputDiv.textContent = randomReview;
+    }
+  </script>
+
+</body>
+</html>
