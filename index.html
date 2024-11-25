@@ -10,40 +10,40 @@
       margin: 20px;
       padding: 20px;
       max-width: 700px;
-      background-color: black; /* Set background to black */
-      color: white; /* Set text color to white */
+      background-color: black;
+      color: white;
     }
     button {
       padding: 10px 20px;
       margin: 10px 5px;
-      background-color: red; /* Set button background to red */
-      color: white; /* Set button text color to white */
+      background-color: red;
+      color: white;
       border: none;
       cursor: pointer;
       border-radius: 5px;
     }
     button:hover {
-      background-color: #cc0000; /* Darker red on hover */
+      background-color: #cc0000;
     }
     .output {
       margin: 15px 0;
       padding: 10px;
-      border: 1px solid #444; /* Slightly lighter border */
+      border: 1px solid #444;
       border-radius: 5px;
-      background-color: #222; /* Dark grey for the review box */
-      color: white; /* Ensure text stays white */
+      background-color: #222;
+      color: white;
     }
     a {
       text-decoration: none;
       padding: 10px 20px;
       margin: 10px 5px;
-      background-color: red; /* Set button background to red */
-      color: white; /* Set link text color to white */
+      background-color: red;
+      color: white;
       border-radius: 5px;
       display: inline-block;
     }
     a:hover {
-      background-color: #cc0000; /* Darker red on hover */
+      background-color: #cc0000;
     }
   </style>
 </head>
@@ -61,13 +61,12 @@
   <script>
     function generateReview() {
       const reviews = [
-        "Chubby Cattle is so unique because of their bold willingness to innovate(some). The arcade machines(some) made me feel nostalgic with their collection of classic video games. Our server Chris went over the menu and the layout of the restaurant(main). He explained that this is their flagship location and offers features like the arcade, sterilized eggs, and self-serve drinks near Chubby Tea(main). Chris asked if we had allergies or were celebrating anything(main). He cooked all the meats perfectly and paired them with the best sauces(main). The 90-minute dining limit felt just right(some), and the ice cream flavors like Taro and Matcha(some) were a perfect way to end the meal. Chris truly provided top-tier service(main). Be sure to ask for Chris if you visit for an unforgettable experience(some)!",
-
-        "This restaurant stands out for its creativity and innovation(some). The arcade games(some) were a fun way to pass time while waiting. Chris, our server, explained the menu thoroughly and highlighted special features like the sterilized eggs, arcade, and self-serve drinks at Chubby Tea(main). He also asked about allergies and special occasions(main). Chris cooked each cut of meat exactly to perfection and recommended excellent sauces(main). The dining time of 90 minutes seemed short at first, but it was plenty for the rich and flavorful meats(some). Their soft-serve ice cream flavors(some), like Sea Salt and Vanilla, are absolutely worth trying! The clean restrooms were also impressive(some). Chris’s service was beyond amazing(main)—don’t miss out on asking for him when you visit(some)!",
-
-        "Chubby Cattle is one of a kind because of their innovative touches(some). The arcade games(some) kept me entertained and brought back memories. Chris, our server, walked us through the menu and described the standout features(main), like the arcade, the sterilized eggs, and the Chubby Tea drink station(main). He also asked about any dietary restrictions or celebrations(main). Chris cooked all of our meats with care and recommended sauces that matched perfectly(main). The 90-minute time limit(some) worked well, and I made room for their delicious ice creams(some) despite being full. The clean and well-maintained restrooms left a great impression(some). Chris’s excellent service(main) made the experience unforgettable(some).",
-        
-        "Chubby Cattle offers such a different experience(some). The arcade machines(some) were so much fun and reminded me of my childhood. Chris was our server, and he went over the menu and explained the restaurant's unique features(main), like the self-serve drink station, sterilized eggs, and arcade(main). He also asked us if we had any allergies or if it was a special occasion(main). Chris cooked the meats to perfection and paired each one with the best sauces(main). Though the dining limit was 90 minutes, it felt perfect(some). Their ice cream options(some), especially Taro and Matcha, were delicious. Clean restrooms(some) also showed how much they care about their customers. Chris’s amazing service(main) tied everything together(some)!"
+        "Chubby Cattle is so unique because of their bold willingness to innovate. The arcade machines made me feel nostalgic with their collection of classic video games. Our server Chris went over the menu and the layout of the restaurant. He explained that this is their flagship location and offers features like the arcade, sterilized eggs, and self-serve drinks near Chubby Tea. Chris asked if we had allergies or were celebrating anything. He cooked all the meats perfectly and paired them with the best sauces. The 90-minute dining limit felt just right, and the ice cream flavors like Taro and Matcha were a perfect way to end the meal. Chris truly provided top-tier service. Be sure to ask for Chris if you visit for an unforgettable experience!",
+        "This restaurant stands out for its creativity and innovation. The arcade games were a fun way to pass time while waiting. Chris, our server, explained the menu thoroughly and highlighted special features like the sterilized eggs, arcade, and self-serve drinks at Chubby Tea. He also asked about allergies and special occasions. Chris cooked each cut of meat exactly to perfection and recommended excellent sauces. The dining time of 90 minutes seemed short at first, but it was plenty for the rich and flavorful meats. Their soft-serve ice cream flavors, like Sea Salt and Vanilla, are absolutely worth trying! The clean restrooms were also impressive. Chris’s service was beyond amazing—don’t miss out on asking for him when you visit!",
+        "Chubby Cattle is one of a kind because of their innovative touches. The arcade games kept me entertained and brought back memories. Chris, our server, walked us through the menu and described the standout features, like the arcade, the sterilized eggs, and the Chubby Tea drink station. He also asked about any dietary restrictions or celebrations. Chris cooked all of our meats with care and recommended sauces that matched perfectly. The 90-minute time limit worked well, and I made room for their delicious ice creams despite being full. The clean and well-maintained restrooms left a great impression. Chris’s excellent service made the experience unforgettable.",
+        "Chubby Cattle offers such a different experience. The arcade machines were so much fun and reminded me of my childhood. Chris was our server, and he went over the menu and explained the restaurant's unique features, like the self-serve drink station, sterilized eggs, and arcade. He also asked us if we had any allergies or if it was a special occasion. Chris cooked the meats to perfection and paired each one with the best sauces. Though the dining limit was 90 minutes, it felt perfect. Their ice cream options, especially Taro and Matcha, were delicious. Clean restrooms also showed how much they care about their customers. Chris’s amazing service tied everything together!",
+        "The service at Chubby Cattle was outstanding. Chris took the time to explain everything to us and make sure we had an amazing experience. The unique features, like the arcade and Chubby Tea drink station, really added to the atmosphere. Everything Chris cooked was perfect, and the sauces he recommended paired wonderfully with the meats. It was such a memorable experience!"
+        // Add additional reviews to reach 30+ prompts
       ];
 
       // Pick a random review
