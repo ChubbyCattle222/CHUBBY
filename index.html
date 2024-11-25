@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Review Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      max-width: 600px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px 0;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .output {
+      margin: 15px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Restaurant Review Generator</h1>
+  <p>Click a button below to generate a restaurant review. Copy the text easily using the "Copy to Clipboard" button!</p>
+
+  <button onclick="generateReview('positive')">Generate Positive Review</button>
+  <button onclick="generateReview('neutral')">Generate Neutral Review</button>
+  <button onclick="generateReview('negative')">Generate Negative Review</button>
+
+  <div id="reviewOutput" class="output"></div>
+  <button id="copyButton" style="display: none;" onclick="copyReview()">Copy to Clipboard</button>
+
+  <h2>Quick Links</h2>
+  <ul>
+    <li><a href="https://www.google.com/maps/reviews" target="_blank">Leave a Review on Google</a></li>
+    <li><a href="https://www.yelp.com/writeareview" target="_blank">Leave a Review on Yelp</a></li>
+  </ul>
+
+  <script>
+    const reviews = {
+      positive: "This restaurant exceeded all my expectations! The food was incredible, and the service was impeccable. I can't wait to return!",
+      neutral: "The restaurant was decent. The food was fine, but nothing extraordinary. Service was acceptable.",
+      negative: "Unfortunately, I had a disappointing experience. The food was underwhelming, and the service left a lot to be desired."
+    };
+
+    function generateReview(type) {
+      const output = document.getElementById('reviewOutput');
+      const copyButton = document.getElementById('copyButton');
+      output.textContent = reviews[type];
+      copyButton.style.display = 'block';
+    }
+
+    function copyReview() {
+      const output = document.getElementById('reviewOutput');
+      navigator.clipboard.writeText(output.textContent).then(() => {
+        alert('Review copied to clipboard!');
+      });
+    }
+  </script>
+
+</body>
+</html>
