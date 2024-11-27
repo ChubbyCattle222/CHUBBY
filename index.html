@@ -61,31 +61,31 @@
 
   <script>
     const openers = [
-      "The arcade at Chubby Cattle was a blast, setting the tone for an amazing meal.",
-      "From the moment we walked into Chubby Cattle, the modern decor and vibrant atmosphere stood out.",
-      "The advanced features like robots delivering food made the whole experience exciting and futuristic.",
-      "Chubby Cattle combines innovation and comfort perfectly, creating a one-of-a-kind dining experience."
+      "Walking into Chubby Cattle is like stepping into a futuristic wonderland with its vibrant atmosphere and exciting features.",
+      "The arcade at Chubby Cattle kept us entertained before dinner, setting the perfect tone for the meal.",
+      "From the start, the restaurant's modern design and technological touches, like robots delivering food, were incredibly impressive.",
+      "The moment we walked in, we were amazed by the lively energy and unique setup of Chubby Cattle."
     ];
 
     const descriptions = [
-      "Chris greeted us with a warm smile and explained the menu in detail.",
-      "Chris went above and beyond to ensure everything was perfect, from cooking meats to helping us with sauce pairings.",
-      "He noticed we needed extra napkins before we even asked, showcasing his exceptional attentiveness.",
-      "Chris made sure our table was always tidy and ready for the next course."
+      "Chris greeted us warmly and made us feel at home, walking us through the menu and explaining the standout features.",
+      "Chris went above and beyond by cooking the meats to perfection and helping us pick the best sauces to complement the flavors.",
+      "His attention to detail was remarkable, ensuring we had everything we needed before we even thought to ask.",
+      "Chris made sure our table stayed organized and even helped us adjust the fire for the hot pot, making the experience effortless."
     ];
 
     const specifics = [
-      "The robots delivering food added a fun and futuristic vibe.",
-      "We loved the self-serve drink station by Chubby Tea, which was both convenient and exciting.",
-      "The sterilized eggs were a unique touch that showed how well thought out the restaurant is.",
-      "The sauce bar was incredible, offering endless combinations to enhance every bite."
+      "The self-serve drinks near the Chubby Tea station were a fantastic touch, adding convenience and fun to the evening.",
+      "We were impressed by the innovative robots that delivered our food and drinks seamlessly throughout the night.",
+      "The sterilized eggs and variety of fresh ingredients showed how much thought went into crafting a memorable dining experience.",
+      "The sauce bar was outstanding, offering countless combinations to perfectly enhance each bite of wagyu and fresh seafood."
     ];
 
     const closers = [
-      "Chris’s attention to detail and friendly demeanor made this visit unforgettable.",
-      "We can’t wait to come back and enjoy this extraordinary dining experience again.",
-      "Chubby Cattle is a must-visit for anyone looking for great food and incredible service.",
-      "Ask for Chris when you visit for an experience that is second to none."
+      "Chris's exceptional service and friendly attitude made the night unforgettable, and we cannot wait to return.",
+      "This was one of the best dining experiences we have ever had, and we highly recommend asking for Chris when you visit.",
+      "The mix of incredible food, innovative features, and top-notch service made this visit truly extraordinary.",
+      "Chubby Cattle sets a new standard for dining, and Chris ensures every guest has a wonderful experience from start to finish."
     ];
 
     const usedReviews = new Set();
@@ -99,7 +99,7 @@
         const specific = specifics[Math.floor(Math.random() * specifics.length)];
         const closer = closers[Math.floor(Math.random() * closers.length)];
         review = `${opener} ${description} ${specific} ${closer}`;
-      } while (usedReviews.has(review));
+      } while (usedReviews.has(review) || review.length < 240);
 
       usedReviews.add(review);
       document.getElementById("reviewOutput").textContent = review;
