@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chris Ha</title>
+  <title>Chubby Cattle Reviews</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -49,72 +49,65 @@
 </head>
 <body>
 
-  <h1>Chris Ha</h1>
-  <p>Click the button below to generate a review. Use the links to leave a review on Google or Yelp!</p>
+  <h1>Chubby Cattle Reviews</h1>
+  <p>Click the button below to generate a unique review. Use the links to leave a review on Google or Yelp!</p>
 
   <button onclick="generateReview()">Generate a Review</button>
   <button onclick="copyToClipboard()">Copy to Clipboard</button>
-  <div id="reviewOutput" class="output"></div>
+  <div id="reviewOutput" class="output">Your review will appear here.</div>
 
   <a href="https://gorate.biz/leavechrisareview/" target="_blank">Leave a Google Review</a>
   <a href="https://www.yelp.com/writeareview/biz/WdshnXVjeZq-MvVofMzuTA?review_origin=mobile-site-biz-details-review-feed-war-widget" target="_blank">Leave a Yelp Review</a>
 
   <script>
     const openers = [
-      "From the moment we arrived, everything felt inviting.",
-      "Walking into the restaurant, the atmosphere was warm and welcoming.",
-      "Chubby Cattle set the bar high with its unique and cozy environment.",
-      "Stepping in, we immediately felt the energy of this amazing place.",
-      "The ambiance at Chubby Cattle was lively and inviting."
+      "The arcade at Chubby Cattle was a blast, setting the tone for an amazing meal.",
+      "From the moment we walked into Chubby Cattle, the modern decor and vibrant atmosphere stood out.",
+      "The advanced features like robots delivering food made the whole experience exciting and futuristic.",
+      "Chubby Cattle combines innovation and comfort perfectly, creating a one-of-a-kind dining experience."
     ];
 
     const descriptions = [
-      "Chris greeted us with a kind smile and quickly made us feel at home.",
-      "Our server Chris was attentive and explained every detail of the menu with enthusiasm.",
-      "Chris ensured our experience was seamless by guiding us through the menu and offering great suggestions.",
-      "Chris’s knowledge of the menu and dedication to service were clear from the start.",
-      "With Chris’s help, we felt confident trying new dishes and loved every recommendation."
+      "Chris greeted us with a warm smile and explained the menu in detail.",
+      "Chris went above and beyond to ensure everything was perfect, from cooking meats to helping us with sauce pairings.",
+      "He noticed we needed extra napkins before we even asked, showcasing his exceptional attentiveness.",
+      "Chris made sure our table was always tidy and ready for the next course."
     ];
 
     const specifics = [
-      "The meats were cooked perfectly and paired beautifully with the sauces.",
-      "The variety of options on the menu was impressive, and everything tasted fresh and flavorful.",
-      "The ice cream at the end was a sweet surprise and the perfect way to wrap up the meal.",
-      "Every dish we tried exceeded expectations, thanks to Chris’s recommendations.",
-      "The combination of quality ingredients and expert preparation made the meal unforgettable."
+      "The robots delivering food added a fun and futuristic vibe.",
+      "We loved the self-serve drink station by Chubby Tea, which was both convenient and exciting.",
+      "The sterilized eggs were a unique touch that showed how well thought out the restaurant is.",
+      "The sauce bar was incredible, offering endless combinations to enhance every bite."
     ];
 
     const closers = [
-      "We cannot wait to return for another fantastic experience.",
-      "Chris truly elevated our visit, making it an evening to remember.",
-      "We left feeling completely satisfied and eager to come back soon.",
-      "Thanks to Chris, this was one of the best dining experiences we have ever had.",
-      "If you visit, be sure to ask for Chris for a memorable experience!"
+      "Chris’s attention to detail and friendly demeanor made this visit unforgettable.",
+      "We can’t wait to come back and enjoy this extraordinary dining experience again.",
+      "Chubby Cattle is a must-visit for anyone looking for great food and incredible service.",
+      "Ask for Chris when you visit for an experience that is second to none."
     ];
 
-    const generatedReviews = new Set();
+    const usedReviews = new Set();
 
     function generateReview() {
-      // Create a unique review by combining random phrases
       let review;
+
       do {
-        review = `${getRandom(openers)} ${getRandom(descriptions)} ${getRandom(specifics)} ${getRandom(closers)}`;
-      } while (generatedReviews.has(review));
-      
-      // Add the new review to the set of generated reviews
-      generatedReviews.add(review);
+        const opener = openers[Math.floor(Math.random() * openers.length)];
+        const description = descriptions[Math.floor(Math.random() * descriptions.length)];
+        const specific = specifics[Math.floor(Math.random() * specifics.length)];
+        const closer = closers[Math.floor(Math.random() * closers.length)];
+        review = `${opener} ${description} ${specific} ${closer}`;
+      } while (usedReviews.has(review));
 
-      // Display the review
+      usedReviews.add(review);
       document.getElementById("reviewOutput").textContent = review;
-    }
-
-    function getRandom(array) {
-      return array[Math.floor(Math.random() * array.length)];
     }
 
     function copyToClipboard() {
       const reviewText = document.getElementById("reviewOutput").textContent;
-      if (reviewText) {
+      if (reviewText && reviewText !== "Your review will appear here.") {
         navigator.clipboard.writeText(reviewText).then(() => {
           alert("Review copied to clipboard!");
         }).catch(err => {
