@@ -9,83 +9,139 @@
       font-family: Arial, sans-serif;
       margin: 20px;
       padding: 20px;
-      max-width: 700px;
-      background-color: black;
-      color: white;
+      max-width: 800px;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #444;
+      text-align: center;
     }
     button {
-      padding: 10px 20px;
+      padding: 12px 24px;
       margin: 10px 5px;
-      background-color: red;
+      background-color: #d32f2f;
       color: white;
       border: none;
       cursor: pointer;
       border-radius: 5px;
+      font-size: 16px;
     }
     button:hover {
-      background-color: #cc0000;
+      background-color: #b71c1c;
     }
     .output {
-      margin: 15px 0;
-      padding: 10px;
-      border: 1px solid #444;
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
       border-radius: 5px;
-      background-color: #222;
-      color: white;
+      background-color: #fff;
+      color: #333;
+      font-size: 14px;
     }
-    a {
+    .yelp-button {
       text-decoration: none;
-      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 20px;
       margin: 10px 5px;
-      background-color: red;
+      background-color: #d32f2f;
       color: white;
       border-radius: 5px;
-      display: inline-block;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
     }
-    a:hover {
-      background-color: #cc0000;
+    .yelp-button img {
+      margin-right: 10px;
+      height: 24px;
+      width: auto;
+    }
+    .yelp-button:hover {
+      background-color: #b71c1c;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   </style>
 </head>
 <body>
   <h1>Chris Ha</h1>
-  <p>Write a review for Chris or use the button below to generate one. Click "Copy to Clipboard" to save the generated review, then paste it where needed. Use the provided link to leave a review on Yelp. Thank you!</p>
-  <button onclick="generateReview()">Generate a Review</button>
-  <button onclick="copyToClipboard()">Copy to Clipboard</button>
-  <div id="reviewOutput" class="output">Your review will appear here.</div>
-  <a href="https://www.yelp.com/writeareview/biz/WdshnXVjeZq-MvVofMzuTA?review_origin=mobile-site-biz-details-review-feed-war-widget" target="_blank">Leave a Yelp Review</a>
+  <p>Write a review for Chris or use the button below to generate one. Click "Copy to Clipboard" to save the generated review, then paste it where needed. Use the link below to leave a review on Yelp. Thank you!</p>
+  <div class="container">
+    <button onclick="generateReview()">Generate a Review</button>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    <div id="reviewOutput" class="output">Your review will appear here.</div>
+    <a class="yelp-button" href="https://www.yelp.com/writeareview/biz/WdshnXVjeZq-MvVofMzuTA?review_origin=mobile-site-biz-details-review-feed-war-widget" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp Logo">
+      Leave a Yelp Review
+    </a>
+  </div>
 
   <script>
     const openers = [
-      "Walking into Chubby Cattle, we were warmly welcomed by Chris Ha's friendly smile.",
-      "From the very start, Chris Ha ensured we felt right at home in this lively and unique spot.",
-      "Our visit to Chubby Cattle began with a great greeting from Chris Ha, setting the tone for a perfect meal.",
-      "Chris Ha made our first impression at Chubby Cattle unforgettable with his kindness and professionalism.",
-      "As soon as we arrived, Chris Ha's attention to detail stood out, making us feel like VIPs."
+      "Chris Ha greeted us with such warmth and positivity, starting our evening perfectly.",
+      "From the very beginning, Chris Ha's energy and enthusiasm made us feel special.",
+      "Walking into Chubby Cattle, Chris Ha's professionalism was evident right away.",
+      "Chris Ha went above and beyond to welcome us and ensure we had a comfortable start.",
+      "Right from the start, Chris Ha's exceptional service stood out.",
+      "Our evening began with a big smile from Chris Ha, and it only got better from there.",
+      "Chris Ha's attention to detail was noticeable as soon as we arrived.",
+      "We felt immediately at ease thanks to the warm welcome from Chris Ha.",
+      "Chris Ha set a welcoming tone for our meal with his genuine kindness.",
+      "The friendly service from Chris Ha was evident from the moment we sat down.",
+      "Chris Ha provided a fantastic introduction to the menu, getting us excited for the meal ahead.",
+      "We were instantly impressed by Chris Ha's approachable and professional demeanor.",
+      "Chris Ha made sure we felt welcomed and relaxed right from the start.",
+      "As soon as we arrived, Chris Ha's attention and care stood out.",
+      "Chris Ha set a high standard for service from the very beginning.",
+      "The moment we were greeted by Chris Ha, we knew we were in for a great experience.",
+      "Chris Ha's friendly and warm approach made us feel right at home.",
+      "We started our dining experience with a helpful and detailed introduction from Chris Ha.",
+      "The first impression was excellent thanks to Chris Ha's outstanding service.",
+      "Chris Ha's warm greeting made the perfect start to our meal.",
+      "Walking in, we were immediately charmed by Chris Ha's friendly demeanor.",
+      "Chris Ha created a welcoming atmosphere from the moment we arrived.",
+      "The attentive and thoughtful service from Chris Ha was apparent as soon as we walked in.",
+      "We were greeted with a cheerful attitude and excellent service from Chris Ha.",
+      "Chris Ha started our evening with kindness and helpfulness, setting the tone for a great experience."
     ];
 
     const descriptions = [
-      "Chris recommended wagyu cuts that were cooked to perfection and paired them with sauces that elevated the flavors.",
-      "The service was seamless thanks to Chris, who guided us through the menu and kept the evening flowing smoothly.",
-      "Chris's suggestions for side dishes and sauces added an extra layer of excitement to the meal.",
-      "We loved how Chris took time to explain the grilling process, ensuring we enjoyed every bite to the fullest.",
-      "Chris made sure every detail was perfect, from keeping our drinks filled to offering thoughtful pairing advice."
+      "Chris's recommendations for our meal were spot on, ensuring we enjoyed every bite.",
+      "The wagyu options were incredible, and Chris's advice made them even better.",
+      "Thanks to Chris, the meal felt like a well-curated experience of flavor and quality.",
+      "Chris's careful attention to our needs elevated the entire evening.",
+      "The service was impeccable, with Chris ensuring every detail was perfect.",
+      "Chris's expertise made pairing meats and sides a truly enjoyable process.",
+      "We appreciated Chris's thoughtful suggestions for sauces that complemented each dish.",
+      "Chris explained everything clearly, making the experience easy and fun.",
+      "Chris took extra care to check on our table and provide helpful recommendations.",
+      "Every step of the meal was enhanced by Chris's attentive and cheerful service."
     ];
 
     const specifics = [
-      "Chris introduced us to the Soju Rita, a refreshingly fruity drink that complemented the wagyu perfectly.",
-      "He recommended the Heaven 12 sake, which paired beautifully with the A5 wagyu and brought out its richness.",
-      "Chris shared fascinating details about the origins of the A5 wagyu, making the experience both delicious and educational.",
-      "The fresh wasabi Chris suggested for the wagyu was a game-changer and highlighted the flavors in the best way.",
-      "We ended the meal with the matcha ice cream Chris recommended, a sweet and satisfying finish to an incredible dinner."
+      "Chris suggested pairing the wagyu with Kuroshi Omaichi sake, which was delightful.",
+      "The Soju Rita recommendation from Chris was refreshing and perfectly balanced.",
+      "Chris explained the origins of the A5 wagyu cuts, adding depth to our dining experience.",
+      "The Heaven 12 sake Chris recommended was the perfect match for our meal.",
+      "We loved the unique flavors of the sauces Chris helped us choose.",
+      "The dessert options Chris suggested were a sweet and satisfying conclusion.",
+      "The fresh wasabi that Chris recommended for the wagyu was a highlight of the meal."
     ];
 
     const closers = [
-      "This visit was unforgettable, and we cannot wait to come back and enjoy Chris Ha's excellent service again.",
-      "Thanks to Chris Ha, this dining experience stands out as one of our all-time favorites.",
-      "Highly recommend visiting Chubby Cattle and asking for Chris Ha for a truly amazing meal.",
-      "The delicious food and exceptional service from Chris Ha make Chubby Cattle a must-visit.",
-      "We left with full stomachs and happy memories, all thanks to the fantastic care from Chris Ha."
+      "This meal was unforgettable, and we look forward to returning.",
+      "Thanks to Chris Ha, our dining experience was truly exceptional.",
+      "We highly recommend asking for Chris Ha for an amazing time.",
+      "We cannot wait to return and enjoy this fantastic service again.",
+      "The combination of great food and Chris's stellar service makes this a must-visit."
     ];
 
     const generatedReviews = new Set();
