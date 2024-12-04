@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chubby Tea</title>
+  <title>Chris Ha</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
       padding: 20px;
       max-width: 700px;
-      background-color: #016936;
-      color: #FFD700;
-      font-weight: bold;
+      background-color: black;
+      color: white;
     }
     button {
       padding: 10px 20px;
       margin: 10px 5px;
-      background-color: black;
+      background-color: red;
       color: white;
-      font-weight: bold;
       border: none;
       cursor: pointer;
       border-radius: 5px;
     }
     button:hover {
-      background-color: #333;
+      background-color: #cc0000;
     }
     .output {
       margin: 15px 0;
@@ -33,26 +31,25 @@
       border: 1px solid #444;
       border-radius: 5px;
       background-color: #222;
-      color: #FFD700;
+      color: white;
     }
     a {
       text-decoration: none;
       padding: 10px 20px;
       margin: 10px 5px;
-      background-color: black;
+      background-color: red;
       color: white;
-      font-weight: bold;
       border-radius: 5px;
       display: inline-block;
     }
     a:hover {
-      background-color: #333;
+      background-color: #cc0000;
     }
   </style>
 </head>
 <body>
-  <h1>Chubby Tea</h1>
-  <p>Click the button below to generate a unique Yelp review for Chris Ha. Copy the generated review to clipboard and paste it on Yelp.</p>
+  <h1>Chris Ha</h1>
+  <p>Write a review for Chris or use the button below to generate one. Click "Copy to Clipboard" to save the generated review, then paste it where needed. Use the provided link to leave a review on Yelp. Thank you!</p>
   <button onclick="generateReview()">Generate a Review</button>
   <button onclick="copyToClipboard()">Copy to Clipboard</button>
   <div id="reviewOutput" class="output">Your review will appear here.</div>
@@ -60,35 +57,35 @@
 
   <script>
     const openers = [
-      "Chris Ha greeted us warmly and set the tone for a fantastic visit.",
-      "From the moment we arrived, Chris Ha's friendly demeanor made us feel at home.",
-      "Chris Ha welcomed us with a big smile and exceptional energy.",
-      "The atmosphere was inviting, and Chris Ha ensured we were comfortable right away.",
-      "Walking in, we immediately felt cared for thanks to Chris Ha's thoughtful approach."
+      "Chris Ha greeted us with a warm smile and made us feel immediately at ease.",
+      "Stepping into Chubby Cattle, we were delighted by the lively atmosphere and greeted by Chris Ha.",
+      "From the very beginning, Chris Ha's professionalism and kindness stood out.",
+      "Walking in, the vibrant ambiance paired with Chris Ha's exceptional service created a fantastic first impression.",
+      "Our visit began wonderfully, thanks to the welcoming energy from Chris Ha."
     ];
 
     const descriptions = [
-      "The drinks were vibrant, fresh, and packed with flavor.",
-      "Each beverage was a burst of creativity, perfectly crafted and refreshing.",
-      "We loved exploring the unique flavors on the menu, each drink was a delight.",
-      "Chris Ha's recommendations were on point, and the drinks exceeded our expectations.",
-      "Every sip was a treat, with balanced flavors and beautiful presentation."
+      "Chris ensured our drinks were always full and checked on us regularly without being intrusive.",
+      "He went above and beyond to provide thoughtful recommendations tailored to our tastes.",
+      "Chris's attention to detail, from table settings to personalized suggestions, was remarkable.",
+      "Every step of the meal was seamless, with Chris handling everything with ease and expertise.",
+      "Chris's approach to service made us feel like valued guests, and his knowledge of the menu was impressive."
     ];
 
     const specifics = [
-      "The Mango Coconut Slushy was like a tropical escape in a cup.",
-      "The Thai Tea was smooth and perfectly sweet, an absolute must try.",
-      "The Guava Kumquat Green Tea was fruity and bright, a true standout.",
-      "The Herbal Hot Tea was calming and aromatic, perfect for unwinding.",
-      "The Grapefruit Kumquat Green Tea was refreshingly zesty and flavorful."
+      "The wagyu was perfectly marbled, and Chris suggested the perfect sauces to enhance its flavor.",
+      "The dessert options, especially the taro ice cream, were delightful recommendations from Chris.",
+      "Chris even walked us through pairing sauces with different cuts of meat, making the experience unforgettable.",
+      "The drink station was a fun touch, and Chris made sure we had everything we needed to enjoy it fully.",
+      "Chris's recommendation of the matcha ice cream was the perfect way to end the meal on a high note."
     ];
 
     const closers = [
-      "Chris Ha's dedication to excellent service makes this a top notch spot.",
-      "This is hands down the best tea shop experience I have had, all thanks to Chris Ha.",
-      "I am already looking forward to my next visit to try even more.",
-      "This place is a gem, and I will definitely be recommending it to everyone I know.",
-      "If you want great drinks and amazing service, Chris Ha and Chubby Tea are the perfect combination."
+      "If you visit, be sure to ask for Chris, as he truly made our experience outstanding.",
+      "This restaurant is a must-visit, and Chris Ha's service makes it even more special.",
+      "Thanks to Chris Ha, this is now one of our favorite places to dine, and we will be back.",
+      "The combination of excellent food and exceptional service from Chris Ha sets this place apart.",
+      "Highly recommended for anyone looking for a memorable dining experience, especially with Chris Ha."
     ];
 
     const generatedReviews = new Set();
@@ -100,12 +97,13 @@
         const description = descriptions[Math.floor(Math.random() * descriptions.length)];
         const specific = specifics[Math.floor(Math.random() * specifics.length)];
         const closer = closers[Math.floor(Math.random() * closers.length)];
-
         review = `${opener} ${description} ${specific} ${closer}`;
       } while (generatedReviews.has(review));
 
       generatedReviews.add(review);
-      document.getElementById("reviewOutput").textContent = review;
+
+      const outputDiv = document.getElementById("reviewOutput");
+      outputDiv.textContent = review;
     }
 
     function copyToClipboard() {
