@@ -57,41 +57,42 @@
 
   <script>
     const openers = [
-      "Chris Ha greeted us with a warm smile and made us feel immediately at ease.",
-      "Stepping into Chubby Cattle, we were delighted by the lively atmosphere and greeted by Chris Ha.",
-      "From the very beginning, Chris Ha's professionalism and kindness stood out.",
-      "Walking in, the vibrant ambiance paired with Chris Ha's exceptional service created a fantastic first impression.",
-      "Our visit began wonderfully, thanks to the welcoming energy from Chris Ha."
+      "Walking into Chubby Cattle, we were warmly welcomed by Chris Ha's friendly smile.",
+      "From the very start, Chris Ha ensured we felt right at home in this lively and unique spot.",
+      "Our visit to Chubby Cattle began with a great greeting from Chris Ha, setting the tone for a perfect meal.",
+      "Chris Ha made our first impression at Chubby Cattle unforgettable with his kindness and professionalism.",
+      "As soon as we arrived, Chris Ha's attention to detail stood out, making us feel like VIPs."
     ];
 
     const descriptions = [
-      "Chris ensured our drinks were always full and checked on us regularly without being intrusive.",
-      "He went above and beyond to provide thoughtful recommendations tailored to our tastes.",
-      "Chris's attention to detail, from table settings to personalized suggestions, was remarkable.",
-      "Every step of the meal was seamless, with Chris handling everything with ease and expertise.",
-      "Chris's approach to service made us feel like valued guests, and his knowledge of the menu was impressive."
+      "Chris recommended wagyu cuts that were cooked to perfection and paired them with sauces that elevated the flavors.",
+      "The service was seamless thanks to Chris, who guided us through the menu and kept the evening flowing smoothly.",
+      "Chris's suggestions for side dishes and sauces added an extra layer of excitement to the meal.",
+      "We loved how Chris took time to explain the grilling process, ensuring we enjoyed every bite to the fullest.",
+      "Chris made sure every detail was perfect, from keeping our drinks filled to offering thoughtful pairing advice."
     ];
 
     const specifics = [
-      "The wagyu was perfectly marbled, and Chris suggested the perfect sauces to enhance its flavor.",
-      "The dessert options, especially the taro ice cream, were delightful recommendations from Chris.",
-      "Chris even walked us through pairing sauces with different cuts of meat, making the experience unforgettable.",
-      "The drink station was a fun touch, and Chris made sure we had everything we needed to enjoy it fully.",
-      "Chris's recommendation of the matcha ice cream was the perfect way to end the meal on a high note."
+      "Chris introduced us to the Soju Rita, a refreshingly fruity drink that complemented the wagyu perfectly.",
+      "He recommended the Heaven 12 sake, which paired beautifully with the A5 wagyu and brought out its richness.",
+      "Chris shared fascinating details about the origins of the A5 wagyu, making the experience both delicious and educational.",
+      "The fresh wasabi Chris suggested for the wagyu was a game-changer and highlighted the flavors in the best way.",
+      "We ended the meal with the matcha ice cream Chris recommended, a sweet and satisfying finish to an incredible dinner."
     ];
 
     const closers = [
-      "If you visit, be sure to ask for Chris, as he truly made our experience outstanding.",
-      "This restaurant is a must-visit, and Chris Ha's service makes it even more special.",
-      "Thanks to Chris Ha, this is now one of our favorite places to dine, and we will be back.",
-      "The combination of excellent food and exceptional service from Chris Ha sets this place apart.",
-      "Highly recommended for anyone looking for a memorable dining experience, especially with Chris Ha."
+      "This visit was unforgettable, and we cannot wait to come back and enjoy Chris Ha's excellent service again.",
+      "Thanks to Chris Ha, this dining experience stands out as one of our all-time favorites.",
+      "Highly recommend visiting Chubby Cattle and asking for Chris Ha for a truly amazing meal.",
+      "The delicious food and exceptional service from Chris Ha make Chubby Cattle a must-visit.",
+      "We left with full stomachs and happy memories, all thanks to the fantastic care from Chris Ha."
     ];
 
     const generatedReviews = new Set();
 
     function generateReview() {
       let review;
+
       do {
         const opener = openers[Math.floor(Math.random() * openers.length)];
         const description = descriptions[Math.floor(Math.random() * descriptions.length)];
