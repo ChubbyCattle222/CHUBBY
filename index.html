@@ -9,22 +9,18 @@
       font-family: 'Arial', sans-serif;
       margin: 20px auto;
       max-width: 800px;
-      background-color: #fdfdfd;
+      background-color: #f7f7f7;
       color: #333;
       line-height: 1.8;
+      padding: 0 20px;
     }
 
     h1 {
       text-align: center;
-      color: #d32f2f;
+      color: #37474f;
       margin-bottom: 10px;
       font-size: 2.5em;
-    }
-
-    .logo {
-      display: block;
-      margin: 0 auto 20px auto;
-      max-width: 200px;
+      font-weight: bold;
     }
 
     p {
@@ -36,7 +32,7 @@
     button {
       padding: 12px 24px;
       margin: 10px 5px;
-      background-color: #d32f2f;
+      background-color: #1565c0;
       color: white;
       border: none;
       cursor: pointer;
@@ -46,7 +42,7 @@
     }
 
     button:hover {
-      background-color: #b71c1c;
+      background-color: #0d47a1;
     }
 
     .output {
@@ -58,34 +54,26 @@
       color: #333;
       font-size: 16px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      min-height: 80px;
     }
 
     .yelp-button {
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-block;
       padding: 15px 20px;
-      margin: 10px auto;
-      background-color: #d32f2f;
+      margin: 10px 0;
+      background-color: #1565c0;
       color: white;
       border-radius: 5px;
       font-size: 16px;
       font-weight: bold;
-      width: 100%;
-      max-width: 300px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .yelp-button img {
-      margin-right: 10px;
-      height: 24px;
-      width: auto;
+      transition: background-color 0.3s ease;
     }
 
     .yelp-button:hover {
-      background-color: #b71c1c;
+      background-color: #0d47a1;
     }
 
     .container {
@@ -93,10 +81,18 @@
       flex-direction: column;
       align-items: center;
     }
+
+    small {
+      display: block;
+      margin-top: 5px;
+      color: #666;
+      font-style: italic;
+      font-size: 14px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <img class="logo" src="chubby cattle Logo white.jpg" alt="Chubby Cattle Logo">
   <h1>Chris Ha</h1>
   <p>Write a review for Chris or use the button below to generate one. Click "Copy to Clipboard" to save the generated review, then paste it where needed. Use the link below to leave a review on Yelp. Thank you!</p>
   <div class="container">
@@ -104,7 +100,6 @@
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
     <div id="reviewOutput" class="output">Your review will appear here.</div>
     <a class="yelp-button" href="https://www.yelp.com/writeareview/biz/WdshnXVjeZq-MvVofMzuTA?review_origin=mobile-site-biz-details-review-feed-war-widget" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Yelp_Logo.svg" alt="Yelp Logo">
       Leave a Yelp Review
     </a>
   </div>
